@@ -1,5 +1,6 @@
 ---
 title: Binary Search
+tags: ["Binary Search"]
 ---
 
 Binary search is a commonly-used search method on sorted arrays/lists. If we need to find element x inside **sorted** array a, then `binary_search(a, x)` can be implemented with Python bisect library.
