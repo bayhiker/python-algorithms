@@ -1,4 +1,4 @@
-from .bs import bs_bisect
+from .binary_search import bs_bisect
 
 def test_bs_bisect():
     a0 = []
