@@ -3,5 +3,9 @@
   "python.testing.unittestEnabled": false,
   "python.testing.nosetestsEnabled": false,
   "python.testing.pytestEnabled": true,
-  "python.pythonPath": "/home/mike/.venv/algorithms/bin/python"
+  "python.pythonPath": "/home/mike/.venv/algorithms/bin/python",
+  "python.formatting.provider": "black",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  }
 }
