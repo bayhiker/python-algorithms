@@ -125,6 +125,7 @@ class VirusMatrixBacktrack:
 
 
 # This is a DP solution to the generic Hamiltonian Path problem
+# Reference https://www.hackerearth.com/practice/algorithms/graphs/hamiltonian-path/tutorial/
 def has_hamiltonian_path_dp(adj: List[List[int]]):
     total_nodes = len(adj)
     # dp[i][j]: if there is a path to node i, covering all nodes indicated by bits in

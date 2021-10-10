@@ -41,5 +41,9 @@ def test_solve_virus_matrix_dp():
     assert solve_virus_matrix_dp(2) is None
     path = solve_virus_matrix_dp(3)
     assert path is not None
-    print(f"Path found when n-3 is {path}")
+    print(f"Path found when n=3 is {path}")
     assert solve_virus_matrix_dp(4) is None
+    # Takes a long time to run
+    # path = solve_virus_matrix_dp(5)
+    # assert path is not None
+    # print(f"Path found when n=5 is {path}")
