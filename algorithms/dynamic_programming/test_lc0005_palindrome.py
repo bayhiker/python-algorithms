@@ -1,3 +1,4 @@
+from algorithms.lib.test import duration
 from .lc0005_palindrome import is_palindrome, get_longest_brute_force, get_longest_dp
 import pytest
 from time import time
@@ -28,10 +29,6 @@ def test_get_longest_dp():
 
 def test_performance():
     s = "x" * 400
-    start_time = time()
-    get_longest_brute_force(s)
-    duration_brute_force = time() - start_time
-    start_time = time()
-    get_longest_dp(s)
-    duration_dp = time() - start_time
+    duration_brute_force = duration(lambda: get_longest_brute_force(s))
+    duration_dp = duration(lambda: get_longest_dp(s))
     print(f"dp is {duration_brute_force/duration_dp} faster then brute_force")
