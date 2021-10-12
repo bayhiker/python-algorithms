@@ -109,7 +109,15 @@ def first_wins_with_values_dp(values: List[float]):
 
 
 #
-# State transition:
+# If n is even:
+# As long as sum of all odd coins are not exactly equal to sum of all even coins
+# first play is guaranteed to win:
+# For the sake of argument, let's assume coins 0..n-2 are more than coins 1..n-1
+# then first player can first choose the left-most coin 0, this forces player 2
+# to pick either coin 1 or coin n-1 both belonging to the losing group. Same goes
+# on and eventually player 1 wins.
+#
+# If n is odd, then we need to use DP with this state transition:
 # dp[m][n] = max(
 #     min(
 #         values[m] + dp[m+2][n]), # first player take one from left, second also one from left
@@ -126,9 +134,11 @@ def first_wins_left_right_dp(values: List[float]):
     n = len(values)
     if n <= 0:
         raise ValueError(f"Invalid n found: {n}")
+    if n % 2 == 0:
+        return sum(values[1::2]) != sum(values[::2])
     dp = [[-1 for j in range(0, n)] for i in range(0, n)]
     for i in range(n - 1, -1, -1):
-        for j in range(n - 1, i - 1, -1):
+        for j in range(i, n):
             if i == j:
                 dp[i][j] = values[i]  # First player takes the only coin
             elif j - i == 1:

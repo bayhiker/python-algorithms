@@ -54,3 +54,6 @@ def test_first_wins_left_right_dp():
     assert first_wins_left_right_dp([3, 2, 2, 2])
     assert first_wins_left_right_dp([3, 2, 1, 2, 3])
     assert not first_wins_left_right_dp([3, 2, 1, 100, 3])
+    assert first_wins_left_right_dp([3, 2, 1, 100, 3, 100])
+    assert first_wins_left_right_dp([3, 2, 2, 1, 100, 100])
+    assert not first_wins_left_right_dp([2, 2, 2, 2, 100, 100])
