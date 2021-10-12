@@ -1,5 +1,5 @@
 from algorithms.lib.test import duration
-from .lc0005_palindrome import is_palindrome, get_longest_brute_force, get_longest_dp
+from .longest_palin_substr import is_palindrome, get_longest_brute_force, get_longest_dp
 import pytest
 from time import time
 

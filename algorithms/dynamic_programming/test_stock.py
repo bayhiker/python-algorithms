@@ -1,10 +1,19 @@
-from .lc0188_stock import (
+from .stock import (
     get_max_profit_dp,
     get_max_profit_greedy,
     get_max_profit_recursive,
+    get_profit_recursive,
+    get_profit_dp_bottom_up,
 )
 
 from ..lib.test import duration
+
+
+def test_stock_recursive():
+    assert get_profit_recursive([7, 1, 5, 3, 6, 4])[0] == 5
+    assert get_profit_recursive([7, 6, 4, 3, 1])[0] == 0
+    assert get_profit_dp_bottom_up([7, 1, 5, 3, 6, 4]) == 5
+    assert get_profit_dp_bottom_up([7, 6, 4, 3, 1]) == 0
 
 
 def test_max_profit_greedy():
