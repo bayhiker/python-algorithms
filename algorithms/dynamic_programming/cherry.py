@@ -138,3 +138,16 @@ def cherry_pickup_ii_dp(grid: List[List[int]]) -> int:
         dp_next = dp_current
         dp_current = tmp
     return dp_next[0][cols - 1]
+
+
+def test_cherry_pickup_i_dp():
+    assert cherry_pickup_i_dp([[0, 1, -1], [1, 0, -1], [1, 1, 1]]) == 5
+    assert cherry_pickup_i_dp([[1, 1, -1], [1, -1, 1], [-1, 1, 1]]) == 0
+
+
+def test_cherry_pickup_ii_dp():
+    assert (
+        cherry_pickup_ii_dp([[1, 0, 0, 3], [0, 0, 0, 3], [0, 0, 3, 3], [9, 0, 3, 3]])
+        == 22
+    )
+    assert cherry_pickup_ii_dp([[1, 1], [1, 1]]) == 4
