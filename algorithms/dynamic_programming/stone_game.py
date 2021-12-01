@@ -282,20 +282,63 @@ def stone_game_vii_dp_tabulation(stones: List[int]) -> int:
 # - -10**4 <= stones[i] <= 10**4
 #
 # State transition:
-# dp[i] = max(dp[i+1], prefix_sum[i]-dp[i]])) stone[i] was not taken by Alice vs taken
-# If stone[i] is taken by Bob, then dp[i] = dp[i+1],
-# else if i is taken by Alice, then dp[i] = pre-sum[i] - dp[i+1]
+# dp[i]: max diff when only stones[i:n] are left
+# dp[n] = 0
+# dp[i] = max(dp[i+1], prefix_sum[i]-dp[i]]))
+# dp[n-1] = sum[0:n], when only stones[n-1] is left, there are two stones: stones[n-1], and
+#      before it is the stone that was put back valued at sum(stone[0],...,stones[n-2])
+# Refer to method stone_game_viii_dp_2 for how we get this state transition
 #
 # leetcode_1872
 def stone_game_viii_dp(stones: List[int]) -> int:
-
     n: int = len(stones)
     for i in range(1, n):
         stones[i] = stones[i - 1] + stones[i]  # Use stones[i] to store prefix-sum
-    result = stones[-1]
+    max_diff = stones[n - 1]
+    # Only loop until i == 1, x > 1 with a min of 2, so stones[0] and stones[1] are always
+    # taken by first player
     for i in range(n - 2, 0, -1):
-        result = max(result, stones[i] - result)
-    return result
+        max_diff = max(max_diff, stones[i] - max_diff)
+    return max_diff
+
+
+# This implementation of stone game viii gives the correct result but will time out,
+# Time complexity is O(n**2). Apparently, this problem is looking for an O(n) solution.
+# However, it demonstrates how this easier-to-understand state transition works:
+#
+# dp[i]: Maximum score difference when current player is at stones[i]
+# dp[n-1] = prefix_sum(n-1), current player has to pick up stones[n-1] and rock on its
+#                            left that was put back.
+# dp[i] = max(prefix_sum(j) - dp[j+1]) for all i <= j < n
+# where prefix_sum(j) - dp[j+1] is the case where player takes stones i through j
+#
+# So dp[i] = max(prefix_sum(i) - dp[i+1],
+#                prefix_sum(i+1) - dp[i+2],
+#                prefix_sum(i+2) - dp[i+3],
+#                ...
+#                prefix_sum(n-1) - dp[n],
+#            )
+#    dp[i+1] = max(prefix_sum(i+1) - dp[i+2],
+#                prefix_sum(i+2) - dp[i+3],
+#                ...
+#                prefix_sum(n-1) - dp[n],
+#            )
+# Observation: dp[i+1] is exactly the portion of dp[i] after prefix_sum[i] - dp[i+1]
+#    dp[i] = max(prefix_sum[i], dp[i+1])
+# This leads to the simpler state transition used in stone_game_viii_dp
+#
+def stone_game_viii_dp_2(stones: List[int]) -> int:
+    n: int = len(stones)
+    for i in range(1, n):
+        stones[i] = stones[i - 1] + stones[i]
+    dp = [-sys.maxsize for i in range(n)]
+    dp[n - 1] = stones[n - 1]
+    for i in range(n - 2, 0, -1):
+        for j in range(i, n):
+            current_diff = stones[j] - dp[j + 1] if j < n - 1 else dp[n - 1]
+            if current_diff > dp[i]:
+                dp[i] = current_diff
+    return dp[1]
 
 
 # Stone Game ix
@@ -391,6 +434,15 @@ def test_stone_game_viii_dp():
     assert stone_game_viii_dp([2, 2]) == 4
     assert stone_game_viii_dp([-2, -2]) == -4
     assert stone_game_viii_dp([-1, 2, -3, 4, -5]) == 5
+
+
+def test_stone_game_viii_dp_2():
+    assert stone_game_viii_dp_2([2, 2]) == 4
+    assert stone_game_viii_dp_2([-2, -2]) == -4
+    assert stone_game_viii_dp_2([-1, 2, -3, 4, -5]) == 5
+    assert (
+        stone_game_viii_dp_2([-39, -23, -43, -7, 25, -36, -32, 17, -42, -5, -11]) == 11
+    )
 
 
 def test_stone_game_ix_counting():

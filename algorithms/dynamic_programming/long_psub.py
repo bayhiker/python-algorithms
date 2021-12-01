@@ -1,7 +1,6 @@
-# leetcode_5
+# Longest Palindromic
 # Given a string, return the longest palindromic substring
-
-
+# leetcode_5
 def is_palindrome(s):
     if s is None or len(s) == 0:
         return False

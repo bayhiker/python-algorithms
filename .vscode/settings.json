@@ -1,5 +1,5 @@
 {
-  "python.testing.pytestArgs": ["algorithms"],
+  "python.testing.pytestArgs": ["."],
   "python.testing.unittestEnabled": false,
   "python.testing.nosetestsEnabled": false,
   "python.testing.pytestEnabled": true,
@@ -8,5 +8,6 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.python"
   },
-  "cSpell.words": ["nums"]
+  "cSpell.words": ["bpvi", "bsts", "inorder", "nums"],
+  "cSpell.ignoreWords": ["Benhao"]
 }

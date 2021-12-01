@@ -3,7 +3,7 @@ tags: ["Dynamic Programming"]
 title: Dynamic Programming
 ---
 
-Some algorithm problems can be divided into sub-problems that are the same type as the original problem. These problems are usually solved with recursion: Write a function to solve the problem, then the function calls into itself with different parameters to solve sub-problems untilt a stop condition is met.
+Some algorithm problems can be divided into sub-problems that are the same type as the original problem. These problems are usually solved with recursion: Write a function to solve the problem, then the function calls into itself with different parameters to solve sub-problems until a stop condition is met.
 
 Dynamic programming is used to solve problems with the following two properties:
 
@@ -26,20 +26,3 @@ In other words, recursive problems satisfying the optimal sub-structure property
 # References
 
 - [Dynamic Programming on Wikipedia](https://en.wikipedia.org/wiki/Dynamic_programming)
-
-# DP Problems Worth a Second Look
-
-## [https://leetcode.com/problems/stone-game-viii/](Leetcode Problem 1872: Stone Game viii)
-
-State transition for this problem is fairly straight-forward if you realize the following logic:
-
-Starting from i = n-1, moving backwards towards i = 0:
-
-- if stone i is chosen by Alice, then the optimal score diff is prefix_sub[i] - dp[i+1]. Here dp[i+1] is the Bob's max score diff with Alice.
-- If stone i is not chosen by Alice, then dp[i] = dp[i+1]
-
-More details are explained [https://leetcode.com/problems/stone-game-viii/discuss/1224639/Python-prefix-sum](here) by zdu011, and [https://leetcode-cn.com/problems/stone-game-viii/solution/python-dong-tai-gui-hua-by-qubenhao-j287/](here) as explained by Benhao.
-
-## [https://leetcode.com/problems/stone-game-ix/](Leetcode Problem 2029: Stone Game ix)
-
-Solve this problem by counting remainders when divided by 3.
