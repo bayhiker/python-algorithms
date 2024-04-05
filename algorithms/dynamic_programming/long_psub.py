@@ -12,7 +12,7 @@ def is_palindrome(s):
     return i >= j
 
 
-# Bruteforce: find all substrings and check if it is a palindrome
+# Brute force: find all substrings and check if it is a palindrome
 def get_longest_brute_force(s):
     if not s or len(s) == 0:
         return None
@@ -53,10 +53,10 @@ def get_longest_dp(s):
     return s[longest_start : longest_end + 1]
 
 
-from ..lib.test import duration
+from lib.test import duration
 
 
-def test_is_palindrom():
+def test_is_palindrome():
     assert not is_palindrome(None)
     assert not is_palindrome("")
     assert is_palindrome("a")
@@ -84,3 +84,4 @@ def test_performance():
     duration_brute_force = duration(lambda: get_longest_brute_force(s))
     duration_dp = duration(lambda: get_longest_dp(s))
     print(f"dp is {duration_brute_force/duration_dp} faster then brute_force")
+

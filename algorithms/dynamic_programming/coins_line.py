@@ -154,7 +154,7 @@ def first_wins_left_right_dp(values: List[float]):
     return dp[0][n - 1] > sum(values) / 2
 
 
-from ..lib.test import duration
+from lib.test import duration
 
 
 def test_first_wins_recursive():

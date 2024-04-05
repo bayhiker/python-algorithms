@@ -197,7 +197,7 @@ def stocks_iv_dp(prices: List[float], k: int):
     return dp[total_days - 1][k]
 
 
-from ..lib.test import duration
+from lib.test import duration
 
 
 def test_stocks_i():

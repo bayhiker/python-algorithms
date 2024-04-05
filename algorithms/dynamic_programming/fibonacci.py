@@ -46,7 +46,7 @@ class FibDpTopDown:
 
 
 import pytest
-from ..lib.test import duration
+from lib.test import duration
 
 
 def test_fib_recursion():

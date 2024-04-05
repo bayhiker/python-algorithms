@@ -1,0 +1,70 @@
+{
+  "0062": { "tags": ["dp", "math"], "note": "Use pascal triangle formula" },
+  "0115": { "tags": ["dp"], "note": "convert 2D dp to 1D" },
+  "0234": { "tags": ["floyd's"] },
+  "0292": { "tags": ["math"] },
+  "0301": { "tags": ["hard"] },
+  "0351": { "tags": ["hard"] },
+  "0407": { "tags": ["hard", "trick", "heap"] },
+  "0462": { "tags": ["math"], "note": "Use median instead of mean" },
+  "0475": { "tags": ["array", "two pointers"] },
+  "0521": { "tags": ["trick"] },
+  "0632": {
+    "tags": ["trick", "heap"],
+    "note": "Use pq to track a window of 1 item from each row"
+  },
+  "0665": { "tags": ["monotonic stack"] },
+  "0673": { "tags": ["dp"], "note":"1d dp" },
+  "0678": {
+    "tags": ["trick", "TODO"],
+    "note": "Keep track of extra lefts, cannot be negative"
+  },
+  "0685": { "tags": ["hard"] },
+  "0753": { "tags": ["dfs"], "note": "Min len code, last n-1 digits reused by the next" },
+  "0818": { "tags": ["trick"] },
+  "0857": { "tags": ["hard"] },
+  "0882": { "tags": ["hard", "Dijkstra"], "note":"Use Dijkstra to find shortest to all other nodes" },
+  "0932": {
+    "tags": ["trick", "hard", "divide and conquer", "TODO"],
+    "note": "odd left, even right"
+  },
+  "0952": { "tags": ["union find", "TODO"], "note":"TLE" },
+  "0995": {
+    "tags": ["hard", "queue", "trick"],
+    "note": "Use queue (O(k) space) or reuse nums (O(1) space) to flag flips"
+  },
+  "1117": { "tags": ["semaphore", "threading"] },
+  "1131": { "tags": ["trick", "math"] },
+  "1247": { "tags": ["trick"] },
+  "1273": { "tags": ["trick"] },
+  "1332": { "tags": ["trick", "two pointers"] },
+  "1345": { "tags": ["hash", "BFS"] },
+  "1453": { "tags": ["hard"] },
+  "1473": { "tags": ["dp"] },
+  "1481": { "tags": ["trick", "heap"] },
+  "1647": { "tags": ["trick"], "note": "Counting numbers" },
+  "1697": { "tags": ["hard", "union find", "trick"] },
+  "1734": { "tags": ["xor", "permutation"], "note": "xor of odd n permutation" },
+  "1798": { "tags": ["greedy", "trick"], "note": "dp TLE" },
+  "1916": { "tags": ["hard", "dfs", "TODO"] },
+  "1943": { "tags": ["trick", "prefix sum"] },
+  "1560": { "tags": ["trick"] },
+  "1689": { "tags": ["trick"], "note": "Observe result is the max digit value" },
+  "1942": { "tags": ["heap"] },
+  "2028": { "tags": ["trick", "math"] },
+  "2035": { "tags": ["trick", "itertools", "two pointers"], "note": "knapsack TLE" },
+  "2080": { "tags": ["hash", "binary search"] },
+  "2157": { "tags": ["hard", "dfs", "union find"] },
+  "2189": { "tags": ["hard", "dp"] },
+  "2386": { "tags": ["numbers", "array", "sum", "heap"] },
+  "2398": { "tags": ["two pointers", "monotonic stack"] },
+  "2463": { "tags": ["hard", "dp", "TODO"] },
+  "2518": {
+    "tags": ["hard", "dp", "knapsack", "TODO"],
+    "note": " Don't worry about dp space with n <= 10**9"
+  },
+  "2646": { "tags": ["hard"] },
+  "2654": { "tags": ["trick", "gcd"], "note": "Accumulative GCD " },
+  "2763": { "tags": ["trick"] },
+  "2787": { "tags": ["hard", "knapsack", "TODO"] }
+}

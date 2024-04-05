@@ -3,7 +3,7 @@ from typing import List, Optional
 import sys
 import numpy
 
-from algorithms.lib.bst import TreeNode, bst2inorder, preorder2bst
+from lib.tree import TreeNode, bst2inorder, preorder2bst
 
 # 3sum:
 # Given integer array nums, return all triplets [nums[i], nums[j], nums[k]]
