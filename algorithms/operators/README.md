@@ -1,3 +1,8 @@
+---
+title: Operators
+tags: ["Operator"]
+---
+
 # Bitwise Operators
 
 - bin() function converts a number to its binary representation. bin(2) = 0b10

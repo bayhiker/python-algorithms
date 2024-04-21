@@ -1,3 +1,8 @@
+---
+title: Graph
+tags: ["Graph", "Fenwick Tree", "BIT Tree"]
+---
+
 # Fenwick Tree (BIT Tree)
 
 A Fenwick tree of array A[] is a tree stored in a 1-based array F[], where F[i] stores the sum of A[i] and x - 1 preceding numbers. Here x is the place value of the right most 1 of binary representation of i. For example

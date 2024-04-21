@@ -1,3 +1,8 @@
+---
+title: List
+tags: ["List", "Array", "String", "KMP", "Collection", "Queue", "Stack", "Monotonic Stack", "Substring", "Subarray", "Sub Sequence"]
+---
+
 # Arrays, Lists, and Strings
 
 ## KMP sub-string search algorithm
