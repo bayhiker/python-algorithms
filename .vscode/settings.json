@@ -14,8 +14,10 @@
     "deduped",
     "inorder",
     "mult",
+    "nexts",
     "nums",
     "preimage",
+    "prevs",
     "racecar",
     "subarrays"
   ],

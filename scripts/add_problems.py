@@ -3,7 +3,9 @@ import re
 import sys
 from pathlib import Path
 
-problem_ids = "159 234 2233 952 2672 2899 1247 2158 793 1689 2462 2650 187 2911 234 51"
+problem_ids = (
+    "159 234 2233 952 2672 2899 1247 2158 793 1689 2462 2650 187 2911 234 51 909"
+)
 
 
 def add_problems() -> int:

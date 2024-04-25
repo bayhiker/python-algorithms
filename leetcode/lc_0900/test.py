@@ -6,6 +6,27 @@ def test_0907():
     assert solution.sumSubarrayMins([11, 81, 94, 43, 3]) == 444
 
 
+def test_0909():
+    from .lc_0909 import Solution
+
+    solution = Solution()
+    assert (
+        solution.snakesAndLadders(
+            board=[
+                [-1, -1, -1, -1, -1, -1],
+                [-1, -1, -1, -1, -1, -1],
+                [-1, -1, -1, -1, -1, -1],
+                [-1, 35, -1, -1, 13, -1],
+                [-1, -1, -1, -1, -1, -1],
+                [-1, 15, -1, -1, -1, -1],
+            ]
+        )
+        == 4
+    )
+
+    assert solution.snakesAndLadders(board=[[-1, -1], [-1, 3]]) == 1
+
+
 def test_0945():
     from .lc_0945 import Solution
 
