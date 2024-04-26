@@ -19,3 +19,15 @@ Because most operations of a Fenwick tree is related to binary representation of
 ## Fenwick tree operations
 
 - Init F[] from number list A[]: 
+
+
+# Dijkstra: Shortest Path Between Nodes
+
+Limitation: Edge weights must be positive
+
+- Use two dictionary: visited and distances. visited[x] = True if shortest path to x has been found. distances[x] stores shortest path to x found so far. Initialize visited to all false, and distances to infinity except distances[source] = 0
+1. Find smallest non-visited node y in distances, and mark it as visited. Break if all nodes have been visited or shortest distance is infinity
+2. Check all out-going edges y-z of y, and check if going through y to z shortens distances[z]
+3. Go back to 1 and repeat
+
+Improve performance by using a priority queue to find the next shortest path.

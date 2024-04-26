@@ -13,13 +13,16 @@
     "Ciphertext",
     "deduped",
     "inorder",
+    "Kruskal",
     "mult",
     "nexts",
     "nums",
     "preimage",
     "prevs",
     "racecar",
-    "subarrays"
+    "subarrays",
+    "Topo",
+    "Warshall"
   ],
   "cSpell.ignoreWords": ["Benhao"],
   "editor.formatOnSave": true,
